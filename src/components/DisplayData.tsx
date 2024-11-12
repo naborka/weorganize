@@ -1,17 +1,25 @@
 import React from 'react';
-import { InitData, StartAppParams } from '../types/AppDataTypes';
 
-interface Props {
-    initData: InitData;
-    startAppParams: StartAppParams;
+interface TelegramDataProps {
+    telegramData: {
+        initData: string;
+        initDataUnsafe: object;
+        platform: string;
+        colorScheme: string;
+        themeParams: object;
+        isExpanded: boolean;
+        viewportHeight: number;
+        viewportStableHeight: number;
+        headerColor: string;
+        backgroundColor: string;
+        bottomBarColor: string;
+    };
 }
 
-const DisplayData: React.FC<Props> = ({ initData, startAppParams }) => (
+const DisplayData: React.FC<TelegramDataProps> = ({ telegramData }) => (
     <div>
-        <h2>Init Data:</h2>
-        <pre>{JSON.stringify(initData, null, 2)}</pre>
-        <h2>Start App Params:</h2>
-        <pre>{JSON.stringify(startAppParams, null, 2)}</pre>
+        <h2>Telegram WebApp Data:</h2>
+        <pre>{JSON.stringify(telegramData, null, 2)}</pre>
     </div>
 );
 
